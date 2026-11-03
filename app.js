@@ -256,6 +256,26 @@
     document.getElementById('status-body').hidden = false;
   }
 
+  document.querySelectorAll('.company').forEach(function (company) {
+    var button = company.querySelector('.toggle-all');
+    var items = Array.prototype.slice.call(company.querySelectorAll('details.item'));
+    function allOpen() {
+      return items.every(function (item) { return item.open; });
+    }
+    function updateLabel() {
+      button.textContent = allOpen() ? '모두 접기' : '모두 펼치기';
+    }
+    button.addEventListener('click', function () {
+      var open = !allOpen();
+      items.forEach(function (item) { item.open = open; });
+      updateLabel();
+    });
+    items.forEach(function (item) { item.addEventListener('toggle', updateLabel); });
+    updateLabel();
+  });
+
+  var openBeforePrint = [];
+
   fetch('data.json?v=' + Date.now(), { cache: 'no-store' })
     .then(function (response) {
       if (!response.ok) throw new Error(response.status);
@@ -267,6 +287,11 @@
     });
 
   window.addEventListener('beforeprint', function () {
+    openBeforePrint = Array.prototype.map.call(document.querySelectorAll('main details'), function (el) { return el.open; });
     document.querySelectorAll('main details').forEach(function (el) { el.open = true; });
+  });
+
+  window.addEventListener('afterprint', function () {
+    document.querySelectorAll('main details').forEach(function (el, index) { el.open = openBeforePrint[index]; });
   });
 })();

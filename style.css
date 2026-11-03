@@ -131,7 +131,13 @@ h1 { margin: 0 0 20px; font-size: 40px; line-height: 1.25; font-weight: 700; }
 /* 경력기술서 */
 main { margin-top: 56px; }
 .company { padding-top: 32px; border-top: 2px solid var(--ink); margin-bottom: 64px; scroll-margin-top: 16px; }
-.company > h2 { margin: 0 0 24px; font-size: 28px; line-height: 1.3; }
+.company-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 16px; margin-bottom: 24px; }
+.company-head h2 { margin: 0; font-size: 28px; line-height: 1.3; }
+.toggle-all {
+  padding: 6px 14px; border: 1px solid var(--border); border-radius: 999px; cursor: pointer;
+  background: var(--surface); color: var(--ink); font: inherit; font-size: 14px;
+}
+.toggle-all:hover { background: var(--wash); }
 .company h3 { margin: 32px 0 12px; font-size: 18px; }
 .company ul { margin: 0; padding-left: 20px; }
 .stack { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
@@ -145,7 +151,13 @@ main { margin-top: 56px; }
 .plain { margin-top: 12px !important; }
 
 .item { margin-top: 10px; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; }
-.item > summary { padding: 14px 16px; cursor: pointer; font-weight: 600; }
+.item > summary { position: relative; padding: 14px 112px 14px 16px; cursor: pointer; font-weight: 600; list-style: none; }
+.item > summary::-webkit-details-marker { display: none; }
+.item > summary::after {
+  content: "자세히 보기 ▾"; position: absolute; top: 15px; right: 16px; white-space: nowrap;
+  color: var(--accent-text); font-size: 13px; font-weight: 500;
+}
+.item[open] > summary::after { content: "접기 ▴"; }
 .item > summary:hover { background: var(--wash); border-radius: 10px; }
 .item > :not(summary) { margin-left: 16px; margin-right: 16px; }
 .item > ul { padding: 0 0 14px 20px; }
@@ -163,9 +175,13 @@ main { margin-top: 56px; }
   .top { grid-template-columns: minmax(0, 1fr); gap: 24px; }
   h1 { font-size: 32px; }
   .stack { grid-template-columns: minmax(0, 1fr); }
+  .item > summary { padding-right: 16px; }
+  .item > summary::after { position: static; display: block; margin-top: 4px; }
 }
 @media print {
-  .status, .jump { display: none; }
+  .status, .jump, .toggle-all { display: none; }
+  .item > summary { padding-right: 16px; }
+  .item > summary::after { display: none; }
   .top { display: block; }
   .item { break-inside: avoid; }
 }
