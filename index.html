@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>임희주 경력기술서</title>
+<meta name="description" content="임희주의 경력기술서와 업무현황">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="page">
+  <div class="top">
+    <header class="intro">
+      <p class="eyebrow">Career History</p>
+      <h1>임희주 경력기술서</h1>
+      <nav aria-label="회사 바로가기">
+        <ul class="jump">
+          <li><a href="#selvas">셀바스헬스케어</a></li>
+          <li><a href="#secuware">(주)시큐웨어</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <aside class="status" aria-labelledby="status-title">
+      <div class="status-head">
+        <h2 id="status-title">업무현황</h2>
+        <span id="status-updated" class="muted"></span>
+      </div>
+      <p id="status-error" class="muted" hidden>현황을 불러오지 못했습니다.</p>
+      <div id="status-body" hidden>
+        <table class="counts">
+          <thead>
+            <tr><th scope="col"><span class="sr-only">기간</span></th><th scope="col">커밋</th><th scope="col">이슈</th><th scope="col">Claude<span class="sr-only"> 토큰</span></th><th scope="col">Codex<span class="sr-only"> 토큰</span></th></tr>
+          </thead>
+          <tbody id="status-rows"></tbody>
+        </table>
+        <p class="note muted">Claude·Codex는 AI 사용 토큰(캐시 읽기 제외)입니다.</p>
+        <div class="chart-wrap">
+          <div id="chart" class="chart" aria-hidden="true"></div>
+          <div id="chart-tip" class="tip" hidden aria-hidden="true"></div>
+          <ul class="legend" aria-hidden="true">
+            <li><span class="key key-commits"></span>커밋</li>
+            <li><span class="key key-issues"></span>이슈</li>
+          </ul>
+          <table class="sr-only">
+            <caption>최근 평일 일별 건수</caption>
+            <thead><tr><th scope="col">날짜</th><th scope="col">커밋</th><th scope="col">이슈</th></tr></thead>
+            <tbody id="chart-table"></tbody>
+          </table>
+        </div>
+        <details class="summary-box">
+          <summary id="summary-title">오늘 한 일 요약 자세히 보기</summary>
+          <ul id="summary-list"></ul>
+        </details>
+      </div>
+    </aside>
+  </div>
+
+  <main>
+    <section id="selvas" class="company">
+      <h2>셀바스헬스케어</h2>
+
+      <h3>기술스택</h3>
+      <div class="stack">
+        <div><h4>프로그래밍 언어</h4><ul><li>Java</li><li>Kotlin</li></ul></div>
+        <div><h4>데이터베이스</h4><ul><li>SQLite</li><li>RoomDB</li></ul></div>
+        <div><h4>개발 도구</h4><ul><li>Android Studio</li><li>Cursor AI, Claude</li></ul></div>
+      </div>
+
+      <h3>담당 업무</h3>
+      <ul>
+        <li>회사 주요 제품에 포함된 다양한 프로젝트의 기능 개선 및 신규 기능 개발 담당</li>
+        <li>주 고객인 시각장애인의 접근성을 고려한 UI 설계·구현 전반을 담당</li>
+      </ul>
+
+      <h3>주요 성과 및 기술적 기여</h3>
+
+      <details class="item" open>
+        <summary>다국어 리소스 통합 관리 웹 ‘Resource Hub’ 구축 <span class="period">26.9. 약 1개월</span></summary>
+        <dl>
+          <dt>사용 기술</dt>
+          <dd><ul><li>Python, Flask, SQLite, openpyxl, SVN(CLI), File System Access API</li></ul></dd>
+          <dt>문제</dt>
+          <dd><ul>
+            <li>여러 엑셀 파일로 리소스 관리, 추가·수정 시 매크로로 xml 생성 후 xml + 엑셀 함께 커밋 필요</li>
+            <li>엑셀은 SVN 병합 불가, 동시 수정 시 충돌로 전체 재작업 발생</li>
+          </ul></dd>
+          <dt>조치</dt>
+          <dd><ul>
+            <li>웹 기반 통합 리소스 허브 설계·개발, 기존 엑셀의 90개 프로젝트·리소스 id 10,470개를 웹 DB로 이관</li>
+            <li>Upload → Apply로 로컬 strings.xml 직접 수정, 변경된 줄만 반영해 diff 최소화</li>
+            <li>SVN 최신 소스 동기화, 미리보기 후 승인, 사용자·국가별 권한 관리 구현</li>
+          </ul></dd>
+          <dt>결과</dt>
+          <dd><ul>
+            <li>커밋 대상 xml + 엑셀 → xml만, 엑셀 충돌로 인한 재작업 제거</li>
+            <li>리소스 관리 단일화 및 반영 절차 표준화, 변경 이력(누가·언제·무엇을) 확인 후 반영 가능</li>
+          </ul></dd>
+        </dl>
+      </details>
+
+      <details class="item" open>
+        <summary>온디바이스·클라우드 하이브리드 AI 요약 기능 도입 <span class="period">26.8. 약 1개월</span></summary>
+        <dl>
+          <dt>문제</dt>
+          <dd><ul>
+            <li>시각장애 사용자는 긴 문서·메일·녹음을 점자/음성으로 처음부터 끝까지 읽어야 내용을 파악할 수 있었고, 이미지는 내용을 확인할 방법이 없음</li>
+            <li>네트워크·구독 여부에 따라 AI 사용 가능 여부가 달라, 어떤 환경에서도 동작하는 구조가 필요</li>
+          </ul></dd>
+          <dt>조치</dt>
+          <dd><ul>
+            <li>클라우드 LLM(Gemini)과 온디바이스 LLM(Gemma 3n / Gemma 4, LiteRT-LM)을 결합해, 구독 상태와 모델 설치 여부에 따라 엔진을 자동 선택하도록 구현</li>
+            <li>콘텐츠별 처리 경로 분리: 문서는 텍스트 추출 후 엔진별 입력 길이에 맞춰 절삭, PDF는 원본 그대로 전송해 표·이미지 보존, 이미지는 시각장애인 기준 상세 설명 프롬프트, 오디오는 16kHz mono float PCM 변환 후 30초 단위 멀티턴 처리</li>
+            <li>토큰 스트리밍 응답을 줄 단위로 점자 디스플레이·TTS에 즉시 출력하고, 메일 답장 초안은 본문에 바로 삽입되도록 구현</li>
+          </ul></dd>
+          <dt>결과</dt>
+          <dd><ul>
+            <li>파일 관리자(문서·이미지·오디오 요약)와 이메일(메일 요약·답장 초안)에서 네트워크·구독이 없어도 기기 내 AI로 요약 가능한 환경 구축</li>
+          </ul></dd>
+        </dl>
+      </details>
+
+      <details class="item" open>
+        <summary>BrailleConnectivity 프로젝트 <span class="period">26.4. ~ 26.5. 약 2개월</span></summary>
+        <dl>
+          <dt>문제</dt>
+          <dd><ul>
+            <li>연결 방식(Bluetooth / USB / 원격)별로 스크린리더 연결 프로그램이 분리되어 있어, 다른 환경으로 전환할 때마다 기존 프로그램 종료 후 새 프로그램 실행 필요</li>
+            <li>연결 방식마다 별도 코드베이스가 존재해 유지보수가 어려운 구조</li>
+          </ul></dd>
+          <dt>조치</dt>
+          <dd><ul>
+            <li>Bluetooth(멀티 링크), USB Serial, USB HID, NVDA Remote 4가지 트랜스포트를 공통 lifecycle 인터페이스(onCommPrepare / onFinalize)로 추상화하여 통합 구현</li>
+            <li>Coordinator + StateFlow 단일 진리원으로 연결 전환 시 race condition 방지</li>
+            <li>TTS·단축키 중심 UI 설계로 시각장애 사용자 접근성 확보</li>
+          </ul></dd>
+          <dt>결과</dt>
+          <dd><ul>
+            <li>하나의 앱에서 모든 연결 방식을 즉시 전환 가능한 통합 연결 환경 구현</li>
+            <li>SOLID 원칙 기반 설계로 신규 트랜스포트 추가 시 기존 코드 수정 없이 확장 가능한 구조 확보</li>
+          </ul></dd>
+        </dl>
+        <p class="more"><a href="https://brawny-yarrow-080.notion.site/40ac1b2a521880a49917f587eb0b11fc" target="_blank" rel="noopener">BrailleConnectivity 프로젝트 소개</a></p>
+      </details>
+
+      <details class="item" open>
+        <summary>BrailleHangman 프로젝트 <span class="period">25.12. ~ 26.1. 약 2개월</span></summary>
+        <ul>
+          <li>시각장애인을 주요 사용자로 하는 행맨 게임의 UI를 기획 단계부터 설계·구현까지 주도</li>
+          <li>키 입력 중심 인터랙션, 포커스 이동 시 음성 안내(TTS), 상태 기반 UI 변화를 포함한 접근성 UI 설계</li>
+          <li>게임 진행·설정·단어 관리까지 전반적인 흐름을 UI 설계서로 정의하여 사용성 및 완성도 향상</li>
+        </ul>
+      </details>
+    </section>
+
+    <section id="secuware" class="company">
+      <h2>(주)시큐웨어</h2>
+
+      <h3>기술스택</h3>
+      <div class="stack">
+        <div><h4>프로그래밍 언어</h4><ul><li>Java</li><li>Spring</li><li>Vue.js / JSP / JavaScript</li></ul></div>
+        <div><h4>데이터베이스</h4><ul><li>MySQL / MariaDB</li><li>Oracle</li><li>Cubrid</li></ul></div>
+        <div><h4>개발 도구</h4><ul><li>Yona</li><li>Jenkins</li><li>Docker</li></ul></div>
+      </div>
+
+      <h3>담당 업무 및 성과</h3>
+
+      <article class="project">
+        <h4>소방공무원 인사배치시스템</h4>
+        <p class="role">주요 업무: 유지보수 및 고객 요구사항 개발</p>
+
+        <details class="item">
+          <summary>복합 인덱스 설계로 인사대상자 추출 <strong class="hl">쿼리 속도 약 1.7배 향상 (2.5s → 1.5s)</strong></summary>
+          <dl>
+            <dt>문제</dt>
+            <dd>인사대상자 추출 로직에서 추출 조건에 따른 여러 서브쿼리 및 테이블 조인이 포함되어 쿼리가 복잡했고, 실행계획상 풀스캔 빈번히 발생. ⇒ 쿼리 실행 속도가 3.5초 이상 소요</dd>
+            <dt>조치</dt>
+            <dd>EXPLAIN으로 실행계획을 분석한 결과, 조인 테이블 중 <b>address 테이블</b>에서 가장 많은 rows를 스캔하며 병목이 발생하고 있는 것을 확인. ⇒ WHERE 조건에 사용되는 컬럼들을 포함하는 복합 인덱스를 address 테이블에 설계·추가 ⇒ 인덱스 스캔 및 풀스캔 제거</dd>
+            <dt>결과</dt>
+            <dd>복합 인덱스 적용 이후 쿼리 실행속도가 2.5초 → 1.5초로 단축되어 약 1.7배 성능 향상.</dd>
+          </dl>
+          <p class="more"><a href="https://velog.io/@juju129/db-%EB%B3%B5%ED%95%A9%EC%9D%B8%EB%8D%B1%EC%8A%A4-%EC%84%A4%EC%A0%95%EC%9C%BC%EB%A1%9C-%EC%BF%BC%EB%A6%AC-%EC%84%B1%EB%8A%A5-%EA%B0%9C%EC%84%A0%ED%95%98%EA%B8%B0" target="_blank" rel="noopener">복합인덱스설정 기록</a></p>
+        </details>
+
+        <details class="item">
+          <summary>재귀 호출로 느린 조직도 조회, 단일 쿼리로 <strong class="hl">90배 속도 향상</strong></summary>
+          <dl>
+            <dt>문제</dt>
+            <dd>트리 구조 조직도 조회 시, 레벨별로 재귀적으로 다수의 DB 쿼리를 실행하여 최대 10초 이상 소요. 트리 노드 수 증가에 따라 응답속도가 기하급수적으로 느려져 사용자가 대기해야 하는 문제가 발생.</dd>
+            <dt>조치</dt>
+            <dd>조직도를 한 번의 쿼리로 전체 트리를 가져오는 방식으로 조회 로직을 재설계. MySQL WITH RECURSIVE를 활용하여 트리형 데이터를 단일 쿼리로 조회하도록 개선.</dd>
+            <dt>결과</dt>
+            <dd>조직 트리 조회 속도가 기존 10초 이상 → 약 0.1초로 대폭 단축되어 약 90배 이상 성능 향상.</dd>
+          </dl>
+          <p class="more"><a href="https://brawny-yarrow-080.notion.site/1a7c1b2a521880a7afdfe79ee0c48b06" target="_blank" rel="noopener">상세 과정 기록 보기</a></p>
+        </details>
+
+        <details class="item">
+          <summary>동적 변수 SQL Injection 방지 인터셉터 적용으로 <strong class="hl">보안 강화</strong></summary>
+          <dl>
+            <dt>문제</dt>
+            <dd>MyBatis를 이용해 동적 SQL 생성 시, 사용자 입력값에 따라 SQL Injection 취약점 발생 가능성 존재, 의도치 않은 SQL 키워드 포함 시 쿼리 변조 위험 있음 확인</dd>
+            <dt>조치</dt>
+            <dd>MyBatis 인터셉터 구현 ⇒ 쿼리 실행 전 입력값에 금지 키워드 포함 여부 검사 ⇒ 금지 키워드 확인 시 로직 실행 차단</dd>
+            <dt>결과</dt>
+            <dd>SQL injection 취약점을 방지하여 보안 수준 강화 및 서비스 안정성과 신뢰성 확보</dd>
+          </dl>
+          <p class="more"><a href="https://velog.io/@juju129/sql-%EB%8F%99%EC%A0%81%EB%B3%80%EC%88%98-%EC%A0%95%EC%A0%81%EB%B3%80%EC%88%98%EB%9E%80-sql-injection-%EB%B0%A9%EC%A7%80%ED%95%98%EA%B8%B0" target="_blank" rel="noopener">sql injection방지 코드개선 기록</a></p>
+        </details>
+
+        <ul class="plain">
+          <li>상관서브쿼리/풀스캔 쿼리 튜닝 ⇒ 40s → 5s <strong class="hl">처리속도 약 8배 개선</strong> <a href="https://velog.io/@juju129/DB-full-scan-%EC%BF%BC%EB%A6%AC-%ED%8A%9C%EB%8B%9D%ED%95%98%EC%97%AC-%EC%84%B1%EB%8A%A5-%EA%B0%9C%EC%84%A0%ED%95%98%EA%B8%B0-full-scan%EC%97%90-%EA%B4%80%ED%95%9C-%EC%A0%95%EB%A6%AC" target="_blank" rel="noopener">(쿼리튜닝)</a></li>
+        </ul>
+      </article>
+
+      <article class="project">
+        <h4>MPIS (해상응급환자이송정보시스템)</h4>
+        <p class="role">주요 업무: 기존 코드 리팩터링 및 속도 개선 / 통합 테스트 및 발견 오류 수정</p>
+
+        <details class="item">
+          <summary>여러번의 서비스 호출 ⇒ 한번의 서비스 호출로 변경하여 <strong class="hl">처리 속도 300% 향상</strong></summary>
+          <dl>
+            <dt>문제</dt>
+            <dd>컨트롤러에서 여러 서비스 호출로 트랜잭션이 반복 생성 및 반환 ⇒ 커넥션 오버헤드 및 락경합 발생 ⇒ 성능 저하 유발</dd>
+            <dt>조치</dt>
+            <dd>컨트롤러의 다중 서비스 호출을 하나의 서비스로 통합 ⇒ 서비스 내부에서 여러 mapper를 순차 호출하도록 리팩토링</dd>
+            <dt>결과</dt>
+            <dd>트랜잭션 생성 횟수 감소, sqlSession 재사용으로 커넥션 자원 소모 감소 및 응답속도 향상</dd>
+          </dl>
+          <p class="more"><a href="https://blog.naver.com/dlahj1209/223638403360" target="_blank" rel="noopener">트랜잭션 관리를 통한 성능개선 기록</a></p>
+        </details>
+      </article>
+
+      <article class="project">
+        <h4>법무부 인사배치 시스템</h4>
+
+        <details class="item">
+          <summary>Oracle jdbcType 오류 전역 타입 설정으로 해결</summary>
+          <dl>
+            <dt>문제</dt>
+            <dd>MySql에서 Oracle로 마이그레이션 후 MyBatis 쿼리 실행 시 부적합한 열 유형 오류가 반복적으로 발생</dd>
+            <dt>조치</dt>
+            <dd>로그를 통한 원인 분석 후, 쿼리 매핑 과정에서 타입 불일치 해결을 위해 공통 매퍼 설정을 만들어 jdbcType을 명시적으로 적용</dd>
+            <dt>결과</dt>
+            <dd>Oracle 환경에서도 MyBatis 쿼리 정상 작동 ⇒ 매핑 오류없이 안정적 서비스 운영</dd>
+          </dl>
+          <p class="more"><a href="https://velog.io/@juju129/Oracle-SQLException-%EB%B6%80%EC%A0%81%ED%95%A9%ED%95%9C-%EC%97%B4-%EC%9C%A0%ED%98%95-1111-jdbcType-Config%EC%97%90-%EA%B3%B5%ED%86%B5%EC%A0%81%EC%9A%A9%ED%95%98%EA%B8%B0" target="_blank" rel="noopener">부적합한열유형 해결과정</a></p>
+        </details>
+
+        <ul class="plain">
+          <li>인사배치 시스템 MySQL → Oracle 마이그레이션 <a href="https://velog.io/@juju129/Oracle-ORA-01400-cannot-insert-NULL-into-MOJ-MDPROJECTS.ID-%EC%97%90%EB%9F%AC-%ED%95%B4%EA%B2%B0" target="_blank" rel="noopener">(oracle 트러블 슈팅 기록)</a></li>
+        </ul>
+      </article>
+    </section>
+  </main>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

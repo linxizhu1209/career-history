@@ -1,0 +1,61 @@
+{
+  "days": [
+    {
+      "date": "2026-11-02",
+      "commits": 3,
+      "issues": 1,
+      "tokens": {
+        "claude": 1312699,
+        "codex": 0
+      },
+      "summary": [
+        {
+          "project": "BrailleStopwatch",
+          "commits": 2,
+          "issues": 0,
+          "lines": [
+            "알림음 설정 안내 문구 출력 방식 개선",
+            "타이머 비프음 및 경고 알림 동작 정리",
+            "타이머 시작 시간 설정 관련 오류 수정"
+          ]
+        },
+        {
+          "project": "BrailleConnectivity",
+          "commits": 1,
+          "issues": 1,
+          "lines": [
+            "최근 연결 목록 재연결 시 음성 안내 오류 수정"
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2026-11-03",
+      "commits": 9,
+      "issues": 2,
+      "tokens": {
+        "claude": 937175,
+        "codex": 0
+      },
+      "summary": [
+        {
+          "project": "BrailleStopwatch",
+          "commits": 7,
+          "issues": 2,
+          "lines": [
+            "종료 알림 진동 강도와 패턴 개선",
+            "알림음 설정 항목 세분화 및 동작 정리",
+            "타이머 종료 시 입력창 출력 오류 수정"
+          ]
+        },
+        {
+          "project": "다국어 리소스",
+          "commits": 2,
+          "issues": 0,
+          "lines": []
+        }
+      ]
+    }
+  ],
+  "updatedAt": "2026-11-03T17:24+09:00"
+}
