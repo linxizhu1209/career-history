@@ -1,6 +1,135 @@
 {
   "days": [
     {
+      "date": "2026-10-27",
+      "commits": 7,
+      "issues": 1,
+      "tokens": {
+        "claude": 577110,
+        "codex": 0
+      },
+      "summary": [
+        {
+          "project": "다국어 리소스",
+          "commits": 4,
+          "issues": 0,
+          "lines": [
+            "리소스 파일 업로드 반영"
+          ]
+        },
+        {
+          "project": "BrailleStopwatch",
+          "commits": 3,
+          "issues": 1,
+          "lines": [
+            "메뉴 표시 항목 정리 및 입력 초기화 기능 추가",
+            "타이머 입력 방식 및 알림 설정 개선"
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2026-10-28",
+      "commits": 7,
+      "issues": 2,
+      "tokens": {
+        "claude": 932576,
+        "codex": 0
+      },
+      "summary": [
+        {
+          "project": "BrailleStopwatch",
+          "commits": 4,
+          "issues": 2,
+          "lines": [
+            "알림 관련 기능 개선",
+            "대화상자 키 입력 오류 수정",
+            "기능 동작 문서 정리"
+          ]
+        },
+        {
+          "project": "다국어 리소스",
+          "commits": 2,
+          "issues": 0,
+          "lines": [
+            "다국어 리소스 업로드 반영"
+          ]
+        },
+        {
+          "project": "BrailleFileManager",
+          "commits": 1,
+          "issues": 0,
+          "lines": [
+            "파일 열기 연동 기능 개선"
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2026-10-29",
+      "commits": 4,
+      "issues": 0,
+      "tokens": {
+        "claude": 778584,
+        "codex": 0
+      },
+      "summary": [
+        {
+          "project": "BrailleStopwatch",
+          "commits": 2,
+          "issues": 0,
+          "lines": [
+            "타이머 등록 대화상자 동작 및 시간 입력 표시 개선",
+            "경과 시간 및 종료 알림 횟수 조정"
+          ]
+        },
+        {
+          "project": "BrailleMedia",
+          "commits": 1,
+          "issues": 0,
+          "lines": [
+            "전체 재생 시간 표시 오류 수정"
+          ]
+        },
+        {
+          "project": "BrailleMediaPlayer",
+          "commits": 1,
+          "issues": 0,
+          "lines": [
+            "진행율 그래프 표시 방식 개선"
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2026-10-30",
+      "commits": 1,
+      "issues": 1,
+      "tokens": {
+        "claude": 666515,
+        "codex": 116397
+      },
+      "summary": [
+        {
+          "project": "BrailleMedia",
+          "commits": 1,
+          "issues": 0,
+          "lines": [
+            "재생 속도 및 음높이 오류 수정",
+            "오디오 디코딩 관련 재생 문제 해결"
+          ]
+        },
+        {
+          "project": "기타",
+          "commits": 0,
+          "issues": 1,
+          "lines": [
+            "재생 속도 저하 관련 문제 수정"
+          ]
+        }
+      ]
+    },
+    {
       "date": "2026-11-02",
       "commits": 3,
       "issues": 1,
@@ -34,7 +163,7 @@
       "commits": 9,
       "issues": 2,
       "tokens": {
-        "claude": 937175,
+        "claude": 954624,
         "codex": 0
       },
       "summary": [
@@ -57,5 +186,5 @@
       ]
     }
   ],
-  "updatedAt": "2026-11-03T17:24+09:00"
+  "updatedAt": "2026-11-03T17:27+09:00"
 }
