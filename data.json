@@ -32,9 +32,9 @@
     {
       "date": "2026-11-03",
       "commits": 9,
-      "issues": 2,
+      "issues": 3,
       "tokens": {
-        "claude": 958450,
+        "claude": 1037456,
         "codex": 0
       },
       "summary": [
@@ -43,9 +43,9 @@
           "commits": 7,
           "issues": 2,
           "lines": [
-            "종료 알림 진동 강도와 패턴 개선",
-            "알림음 설정 항목 세분화 및 동작 정리",
-            "타이머 종료 시 입력창 출력 오류 수정"
+            "종료 알림 진동 강도 개선",
+            "알림음 설정 구분 및 출력 방식 정리",
+            "타이머 종료 알림 설정 세분화"
           ]
         },
         {
@@ -53,9 +53,64 @@
           "commits": 2,
           "issues": 0,
           "lines": []
+        },
+        {
+          "project": "기타",
+          "commits": 0,
+          "issues": 1,
+          "lines": []
+        }
+      ]
+    },
+    {
+      "date": "2026-11-04",
+      "commits": 6,
+      "issues": 0,
+      "tokens": {
+        "claude": 931511,
+        "codex": 521530
+      },
+      "summary": [
+        {
+          "project": "BrailleStopwatch",
+          "commits": 3,
+          "issues": 0,
+          "lines": [
+            "타이머 입력 검증 및 코드 품질 개선",
+            "종료 알림 방식 변경 및 설정 옵션 추가",
+            "문서 내용 정리"
+          ]
+        },
+        {
+          "project": "BrailleConnectivity",
+          "commits": 1,
+          "issues": 0,
+          "lines": [
+            "동작 변경 없이 연결 관련 코드 품질 개선",
+            "언어별 키 입력 및 원격 입력 동작 확인",
+            "키보드 레이아웃 설정 확인"
+          ]
+        },
+        {
+          "project": "BrailleHangman",
+          "commits": 1,
+          "issues": 0,
+          "lines": [
+            "코드 품질 개선 및 데이터 백업 기능 비활성화",
+            "게임 시작, 설정, 단어 관리 기능 점검",
+            "출력 기능 동작 확인"
+          ]
+        },
+        {
+          "project": "다국어 리소스",
+          "commits": 1,
+          "issues": 0,
+          "lines": [
+            "다국어 리소스 파일 갱신"
+          ]
         }
       ]
     }
   ],
-  "updatedAt": "2026-11-03T17:28+09:00"
+  "updatedAt": "2026-11-04T16:30+09:00"
 }
