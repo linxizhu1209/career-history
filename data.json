@@ -177,14 +177,24 @@
     },
     {
       "date": "2026-11-10",
-      "commits": 0,
+      "commits": 1,
       "issues": 0,
       "tokens": {
-        "claude": 401770,
+        "claude": 1180881,
         "codex": 84344
       },
-      "summary": []
+      "summary": [
+        {
+          "project": "BrailleConnectivity",
+          "commits": 1,
+          "issues": 0,
+          "lines": [
+            "키보드 Esc 키 입력 미작동 문제 수정",
+            "방향키 조합 커서 이동 중복 동작 문제 수정"
+          ]
+        }
+      ]
     }
   ],
-  "updatedAt": "2026-11-10T09:55+09:00"
+  "updatedAt": "2026-11-10T16:30+09:00"
 }
