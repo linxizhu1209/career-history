@@ -68,7 +68,7 @@
       "issues": 0,
       "tokens": {
         "claude": 931511,
-        "codex": 522070
+        "codex": 479047
       },
       "summary": [
         {
@@ -177,24 +177,60 @@
     },
     {
       "date": "2026-11-10",
-      "commits": 1,
-      "issues": 0,
+      "commits": 2,
+      "issues": 3,
       "tokens": {
-        "claude": 1180881,
+        "claude": 1226044,
         "codex": 84344
       },
       "summary": [
         {
           "project": "BrailleConnectivity",
+          "commits": 2,
+          "issues": 1,
+          "lines": [
+            "원격 연결 중 Esc 키 동작 오류 수정",
+            "원격 연결 중 Ctrl+화살표 이동이 중복되던 문제 수정",
+            "키보드 입력 관련 추가 이슈 점검 및 정리"
+          ]
+        },
+        {
+          "project": "기타",
+          "commits": 0,
+          "issues": 2,
+          "lines": []
+        }
+      ]
+    },
+    {
+      "date": "2026-11-11",
+      "commits": 2,
+      "issues": 0,
+      "tokens": {
+        "claude": 1220554,
+        "codex": 376491
+      },
+      "summary": [
+        {
+          "project": "BrailleMedia",
           "commits": 1,
           "issues": 0,
           "lines": [
-            "키보드 Esc 키 입력 미작동 문제 수정",
-            "방향키 조합 커서 이동 중복 동작 문제 수정"
+            "재생 관련 이슈 수정"
+          ]
+        },
+        {
+          "project": "BrailleMediaPlayer",
+          "commits": 1,
+          "issues": 0,
+          "lines": [
+            "영상 출력 설정에 따른 재생 오류 수정",
+            "진행율 표시 사용 시 종료되던 문제 수정",
+            "재생 중 출력 설정 변경 시 재생 유지"
           ]
         }
       ]
     }
   ],
-  "updatedAt": "2026-11-10T16:30+09:00"
+  "updatedAt": "2026-11-11T16:30+09:00"
 }
