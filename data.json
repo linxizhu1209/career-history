@@ -236,11 +236,46 @@
       "commits": 0,
       "issues": 0,
       "tokens": {
-        "claude": 1082784,
+        "claude": 1417967,
         "codex": 145261
       },
       "summary": []
+    },
+    {
+      "date": "2026-11-13",
+      "commits": 2,
+      "issues": 1,
+      "tokens": {
+        "claude": 2529471,
+        "codex": 296141
+      },
+      "summary": [
+        {
+          "project": "BrailleMedia",
+          "commits": 1,
+          "issues": 0,
+          "lines": [
+            "음악 재생 엔진 교체 및 재생 리소스 해제 처리 추가"
+          ]
+        },
+        {
+          "project": "BrailleVoiceRecorder",
+          "commits": 1,
+          "issues": 0,
+          "lines": [
+            "녹음 재생 후 재생 리소스 해제 시점 수정"
+          ]
+        },
+        {
+          "project": "BrailleMediaPlayer",
+          "commits": 0,
+          "issues": 1,
+          "lines": [
+            "동영상 재생이 중간에 끊기는 문제 수정"
+          ]
+        }
+      ]
     }
   ],
-  "updatedAt": "2026-11-12T16:30+09:00"
+  "updatedAt": "2026-11-13T16:30+09:00"
 }
