@@ -119,6 +119,12 @@
       return day ? Math.max(max, day.commits + day.issues) : max;
     }, 1);
     var peakLabeled = false;
+    // 토큰은 건수와 단위가 달라 별도 축(최댓값 기준)으로 선을 그린다.
+    function tokenSum(day) { var t = tokensOf(day); return t.claude + t.codex; }
+    var tokenPeak = slots.reduce(function (max, iso) {
+      return byDate[iso] ? Math.max(max, tokenSum(byDate[iso])) : max;
+    }, 0);
+    var tokenPoints = [];
 
     var svg = svgEl('svg', { viewBox: '0 0 ' + width + ' ' + height });
     svg.appendChild(svgEl('line', {
@@ -174,7 +180,12 @@
         svg.appendChild(tick);
       }
 
-      var tipText = shortDate(iso) + ' · 커밋 ' + day.commits + '건 · 이슈 ' + day.issues + '건';
+      var tokens = byDate[iso] ? tokenSum(day) : 0;
+      if (tokenPeak) {
+        tokenPoints.push([x + barWidth / 2, base - plot * tokens / tokenPeak]);
+      }
+
+      var tipText = shortDate(iso) + ' · 커밋 ' + day.commits + '건 · 이슈 ' + day.issues + '건 · 토큰 ' + compact(tokens);
       hit.addEventListener('pointerenter', function () {
         var svgBox = svg.getBoundingClientRect();
         var scale = svgBox.width / width;
@@ -188,13 +199,23 @@
       hit.addEventListener('pointerleave', function () { tip.hidden = true; });
 
       var row = document.createElement('tr');
-      [shortDate(iso), day.commits + '건', day.issues + '건'].forEach(function (text) {
+      [shortDate(iso), day.commits + '건', day.issues + '건', tokens.toLocaleString('ko-KR')].forEach(function (text) {
         var cell = document.createElement('td');
         cell.textContent = text;
         row.appendChild(cell);
       });
       tableBody.appendChild(row);
     });
+
+    if (tokenPoints.length) {
+      svg.appendChild(svgEl('polyline', {
+        'class': 'token-line', 'pointer-events': 'none',
+        points: tokenPoints.map(function (p) { return p.join(','); }).join(' ')
+      }));
+      tokenPoints.forEach(function (p) {
+        svg.appendChild(svgEl('circle', { 'class': 'token-dot', 'pointer-events': 'none', cx: p[0], cy: p[1], r: 2.5 }));
+      });
+    }
 
     container.appendChild(svg);
   }

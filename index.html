@@ -41,10 +41,11 @@
           <ul class="legend" aria-hidden="true">
             <li><span class="key key-commits"></span>커밋</li>
             <li><span class="key key-issues"></span>이슈</li>
+            <li><span class="key key-tokens"></span>AI 토큰</li>
           </ul>
           <table class="sr-only">
-            <caption>최근 평일 일별 건수</caption>
-            <thead><tr><th scope="col">날짜</th><th scope="col">커밋</th><th scope="col">이슈</th></tr></thead>
+            <caption>최근 평일 일별 건수와 AI 토큰</caption>
+            <thead><tr><th scope="col">날짜</th><th scope="col">커밋</th><th scope="col">이슈</th><th scope="col">AI 토큰</th></tr></thead>
             <tbody id="chart-table"></tbody>
           </table>
         </div>
@@ -76,12 +77,13 @@
       <h3>주요 성과 및 기술적 기여</h3>
 
       <details class="item" open>
-        <summary>Claude Code 기반 AI 개발 환경 구축 및 표준화 <span class="period">26.10. 약 2주</span></summary>
+        <summary>Claude Code 기반 AI 개발 환경 구축 및 표준화 <span class="period">26.10. 약 한 달</span></summary>
         <ul>
           <li><b>AI 개발 환경 표준화:</b> 프로젝트별 코드 컨벤션, 공통 모듈 관계, 빌드 환경 등을 분석하고, Claude Code가 개발 과정에서 참조할 수 있도록 <code>CLAUDE.md</code>, <code>AGENTS.md</code> 기반 개발 지침 구성</li>
           <li><b>코드 품질 관리 체계화:</b> 반복적으로 발생하는 SonarQube 이슈의 해결 방법과 예방 기준을 정리하여 AI가 코드 생성·수정 단계부터 품질 규칙을 고려하도록 지침에 반영</li>
           <li><b>변경 이력 관리 개선:</b> SVN 커밋 메시지 작성 규칙을 정의하여 AI가 변경 목적과 수정 내용을 일관된 형식으로 기록할 수 있도록 구성</li>
           <li><b>팀 내 AI 활용 기반 마련:</b> 팀원 및 신규 입사자가 공통 개발 지침을 AI와 함께 재사용할 수 있도록 Markdown 기반 개발 컨텍스트 구축</li>
+          <li><b>멀티 에이전트 코드 리뷰 체계 구축:</b> Claude Code의 구현·검증 과정에 Codex의 독립 코드 리뷰 단계를 연계하고, 변경 전후 비교·회귀 위험 분석·공통 모듈 영향도 검토 및 승인 기반 수정 절차를 포함한 AI 교차 검증 워크플로 설계·실제 프로젝트 적용</li>
         </ul>
       </details>
 

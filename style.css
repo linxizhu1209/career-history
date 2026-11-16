@@ -11,6 +11,7 @@
   --accent-text: #1c5cab;
   --series-commits: #2a78d6;
   --series-issues: #eb6834;
+  --series-tokens: #7b5bd6;
   --wash: #f0efec;
 }
 @media (prefers-color-scheme: dark) {
@@ -27,6 +28,7 @@
     --accent-text: #86b6ef;
     --series-commits: #3987e5;
     --series-issues: #d95926;
+    --series-tokens: #a58cf0;
     --wash: #2c2c2a;
   }
 }
@@ -43,6 +45,7 @@
   --accent-text: #86b6ef;
   --series-commits: #3987e5;
   --series-issues: #d95926;
+  --series-tokens: #a58cf0;
   --wash: #2c2c2a;
 }
 
@@ -104,6 +107,8 @@ h1 { margin: 0 0 20px; font-size: 40px; line-height: 1.25; font-weight: 700; }
 .chart .hit:hover { fill: var(--wash); fill-opacity: 0.6; }
 .bar-commits { fill: var(--series-commits); }
 .bar-issues { fill: var(--series-issues); }
+.token-line { fill: none; stroke: var(--series-tokens); stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+.token-dot { fill: var(--series-tokens); stroke: var(--surface); stroke-width: 1.5; }
 .tip {
   position: absolute; z-index: 2; transform: translate(-50%, -100%);
   padding: 4px 8px; border-radius: 6px; white-space: nowrap; pointer-events: none;
@@ -114,6 +119,7 @@ h1 { margin: 0 0 20px; font-size: 40px; line-height: 1.25; font-weight: 700; }
 .key { width: 10px; height: 10px; border-radius: 3px; }
 .key-commits { background: var(--series-commits); }
 .key-issues { background: var(--series-issues); }
+.key-tokens { width: 14px; height: 3px; border-radius: 2px; background: var(--series-tokens); }
 
 .summary-box { margin-top: 12px; border-top: 1px solid var(--line); padding-top: 10px; }
 .summary-box summary { cursor: pointer; color: var(--accent-text); font-size: 14px; font-weight: 500; }
