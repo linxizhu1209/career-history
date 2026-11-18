@@ -305,11 +305,21 @@
       "commits": 0,
       "issues": 0,
       "tokens": {
-        "claude": 761618,
+        "claude": 801197,
+        "codex": 0
+      },
+      "summary": []
+    },
+    {
+      "date": "2026-11-18",
+      "commits": 0,
+      "issues": 0,
+      "tokens": {
+        "claude": 592997,
         "codex": 0
       },
       "summary": []
     }
   ],
-  "updatedAt": "2026-11-17T16:30+09:00"
+  "updatedAt": "2026-11-18T16:30+09:00"
 }
