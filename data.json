@@ -325,7 +325,7 @@
       "commits": 2,
       "issues": 0,
       "tokens": {
-        "claude": 504064,
+        "claude": 717470,
         "codex": 106352
       },
       "summary": [
@@ -339,7 +339,27 @@
           ]
         }
       ]
+    },
+    {
+      "date": "2026-11-20",
+      "commits": 1,
+      "issues": 1,
+      "tokens": {
+        "claude": 1415711,
+        "codex": 148798
+      },
+      "summary": [
+        {
+          "project": "BrailleConnectivity",
+          "commits": 1,
+          "issues": 1,
+          "lines": [
+            "연결 상태 메시지에 연결된 장치 이름 표시",
+            "연결 방식별 상태 메시지 출력 개선"
+          ]
+        }
+      ]
     }
   ],
-  "updatedAt": "2026-11-19T16:30+09:00"
+  "updatedAt": "2026-11-20T16:30+09:00"
 }
