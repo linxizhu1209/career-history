@@ -342,24 +342,52 @@
     },
     {
       "date": "2026-11-20",
-      "commits": 1,
+      "commits": 2,
       "issues": 1,
       "tokens": {
-        "claude": 1415711,
+        "claude": 1436254,
         "codex": 148798
       },
       "summary": [
+        {
+          "project": "BrailleAIHelpBot",
+          "commits": 1,
+          "issues": 0,
+          "lines": [
+            "대화형 화면 구성 및 디자인 적용"
+          ]
+        },
         {
           "project": "BrailleConnectivity",
           "commits": 1,
           "issues": 1,
           "lines": [
-            "연결 상태 메시지에 연결된 장치 이름 표시",
-            "연결 방식별 상태 메시지 출력 개선"
+            "스크린리더 연결 상태 메시지 개선",
+            "연결 방식별 상태 메시지 표시 변경"
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2026-11-25",
+      "commits": 1,
+      "issues": 0,
+      "tokens": {
+        "claude": 948008,
+        "codex": 151715
+      },
+      "summary": [
+        {
+          "project": "BrailleSystemUi",
+          "commits": 1,
+          "issues": 0,
+          "lines": [
+            "부팅 시 블루투스 연결음·끊김음 잘못 재생되는 문제 수정",
+            "실제 기능이 연결된 기기에만 알림음 재생하도록 조건 개선"
           ]
         }
       ]
     }
   ],
-  "updatedAt": "2026-11-20T16:30+09:00"
+  "updatedAt": "2026-11-25T16:30+09:00"
 }
