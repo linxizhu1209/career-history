@@ -373,8 +373,8 @@
       "commits": 1,
       "issues": 0,
       "tokens": {
-        "claude": 948008,
-        "codex": 151715
+        "claude": 1127025,
+        "codex": 181084
       },
       "summary": [
         {
@@ -387,7 +387,17 @@
           ]
         }
       ]
+    },
+    {
+      "date": "2026-11-26",
+      "commits": 0,
+      "issues": 0,
+      "tokens": {
+        "claude": 213449,
+        "codex": 0
+      },
+      "summary": []
     }
   ],
-  "updatedAt": "2026-11-25T16:30+09:00"
+  "updatedAt": "2026-11-26T16:30+09:00"
 }
